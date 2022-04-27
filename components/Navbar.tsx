@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import {
   Container,
@@ -12,9 +12,10 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineShareAlt } from "react-icons/ai";
 
+import { UserContext } from "../lib/context";
+
 const Navbar = () => {
-  const user = null;
-  const username = null;
+  const { user, username } = useContext(UserContext);
 
   return (
     <Container
