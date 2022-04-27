@@ -8,7 +8,7 @@ export const useUserData = () => {
   const [username, setUsername] = useState(null);
 
   useEffect(() => {
-    let unsubscribe: any;
+    let unsubscribe: () => void;
     if (user) {
       const ref = firestore.doc(`users/${user.uid}`);
       unsubscribe = ref.onSnapshot((doc) => {

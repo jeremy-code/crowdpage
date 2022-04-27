@@ -1,3 +1,4 @@
+import { AppProps } from "next/app";
 import { ChakraProvider, Container } from "@chakra-ui/react";
 
 import "../styles/globals.css";
@@ -5,7 +6,7 @@ import { useUserData } from "../lib/hooks";
 import { UserContext } from "../lib/context";
 import Navbar from "../components/Navbar";
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const userData = useUserData();
 
   return (
@@ -18,6 +19,6 @@ function MyApp({ Component, pageProps }) {
       </ChakraProvider>
     </UserContext.Provider>
   );
-}
+};
 
 export default MyApp;

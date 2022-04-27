@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useCallback } from "react";
+import { useContext, useState, useEffect, useMemo } from "react";
 import {
   Button,
   FormControl,
@@ -64,16 +64,17 @@ const UsernameForm = () => {
     }
   };
 
-  const checkUsername = useCallback(
-    debounce(async (username) => {
-      if (username.length >= 3) {
-        const ref = firestore.doc(`users/${username}`);
-        const { exists } = await ref.get();
-        console.log("Firestore read executed!");
-        setIsValid(!exists);
-        setLoading(false);
-      }
-    }, 500),
+  const checkUsername = useMemo(
+    () =>
+      debounce(async (username: string) => {
+        if (username.length >= 3) {
+          const ref = firestore.doc(`users/${username}`);
+          const { exists } = await ref.get();
+          console.log("Firestore read executed!");
+          setIsValid(!exists);
+          setLoading(false);
+        }
+      }, 500),
     []
   );
 
@@ -123,7 +124,17 @@ const UsernameForm = () => {
   );
 };
 
-const UsernameMessage = ({ username, isValid, loading }) => {
+type UsernameMessageProps = {
+  username: string;
+  isValid: boolean;
+  loading: boolean;
+};
+
+const UsernameMessage = ({
+  username,
+  isValid,
+  loading,
+}: UsernameMessageProps) => {
   if (loading) {
     return "Loading...";
   } else if (isValid) {

@@ -3,7 +3,16 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/storage";
 
-const firebaseConfig = {
+type firebaseConfigType = {
+  apiKey: string;
+  authDomain: string;
+  projectId: string;
+  storageBucket: string;
+  messagingSenderId: string;
+  appId: string;
+};
+
+const firebaseConfig: firebaseConfigType = {
   apiKey: "AIzaSyAe2DR1jVNp7ww7zaTZqNEiJsdRvy4icRY",
   authDomain: "social-media-app-60303.firebaseapp.com",
   projectId: "social-media-app-60303",
@@ -17,7 +26,8 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-export const auth = firebase.auth();
-export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-export const firestore = firebase.firestore();
-export const storage = firebase.storage();
+export const auth = firebase.auth() as firebase.auth.Auth;
+export const googleAuthProvider =
+  new firebase.auth.GoogleAuthProvider() as firebase.auth.GoogleAuthProvider;
+export const firestore = firebase.firestore() as firebase.firestore.Firestore;
+export const storage = firebase.storage() as firebase.storage.Storage;
