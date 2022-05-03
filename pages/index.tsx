@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { Button, useToast, Text } from "@chakra-ui/react";
 
-import styles from "../styles/Home.module.css";
 import { firestore, fromMillis, postToJSON } from "../lib/firebase";
 import PostFeed from "../components/PostFeed";
 

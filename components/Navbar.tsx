@@ -43,7 +43,7 @@ const Navbar = () => {
 
       {/* if user is signed in and has username */}
       {username && user && (
-        <Flex align="center" gap={[2, 8]}>
+        <Flex as="nav" align="center" gap={[2, 8]}>
           <Link href="/admin" passHref>
             <Button as={CLink} colorScheme="purple">
               Write Posts
@@ -57,7 +57,7 @@ const Navbar = () => {
 
       {/* if user is not signed OR has no created username */}
       {!username && (
-        <Flex align="center" gap={[2, 8]}>
+        <Flex as="nav" align="center" gap={[2, 8]}>
           <Link href="/enter" passHref>
             <Button as={CLink} colorScheme="purple">
               Login
