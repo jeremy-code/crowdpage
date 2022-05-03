@@ -58,7 +58,7 @@ const Navbar = () => {
       {/* if user is not signed OR has no created username */}
       {!username && (
         <Flex align="center" gap={[2, 8]}>
-          <Link href="enter" passHref>
+          <Link href="/enter" passHref>
             <Button as={CLink} colorScheme="purple">
               Login
             </Button>
