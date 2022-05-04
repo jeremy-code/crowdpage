@@ -1,4 +1,6 @@
-import { Center, Text, Link } from "@chakra-ui/react";
+import { Center, Text } from "@chakra-ui/react";
+
+import Link from "./Link";
 
 const Footer = () => {
   return (

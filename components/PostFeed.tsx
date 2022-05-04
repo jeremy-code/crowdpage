@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { Link as CLink, Text, Flex, Box } from "@chakra-ui/react";
+import { Text, Flex } from "@chakra-ui/react";
 
-import Loader from "./Loader";
 import Card from "./Card";
+import Link from "./Link";
+import Loader from "./Loader";
 
 const PostItem = ({ post, admin = false }) => {
   const wordCount = post?.content?.trim().split(/\+/g).length;
@@ -11,19 +11,15 @@ const PostItem = ({ post, admin = false }) => {
   return (
     <Card>
       <Card.Body>
-        <Box>
-          <Link href={`/${post.username}/${post.slug}`} passHref>
-            <CLink fontSize="2xl">{post.title}</CLink>
+        <Link href={`/${post.username}/${post.slug}`} fontSize="2xl">
+          {post.title}
+        </Link>
+        <Text>
+          Submitted by @
+          <Link href={`/${post.username}`} fontSize="sm">
+            {post.username}
           </Link>
-        </Box>
-        <Box>
-          <Text>
-            Submitted by @
-            <Link href={`/${post.username}`} passHref>
-              <CLink fontSize="sm">{post.username}</CLink>
-            </Link>
-          </Text>
-        </Box>
+        </Text>
       </Card.Body>
       <Card.Footer>
         <Flex justify="space-between">

@@ -7,13 +7,10 @@ getUserWithUsername;
 
 export async function getServerSideProps({ query }) {
   const { username } = query;
-
   const userDoc = await getUserWithUsername(username);
-
   // JSON serializiable data
   let user = null;
   let posts = null;
-
   if (userDoc) {
     user = userDoc.data();
     const postQuery = userDoc.ref

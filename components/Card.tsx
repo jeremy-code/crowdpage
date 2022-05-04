@@ -1,9 +1,6 @@
 import { Divider, Flex, Box } from "@chakra-ui/react";
 
-type BodyComponent = React.FunctionComponent;
-type CardComponent = React.FunctionComponent & { body: BodyComponent };
-
-const Card = ({ children }) => {
+const Card = ({ children }: { children: React.ReactNode }) => {
   return (
     <Flex
       flexDir="column"
@@ -19,11 +16,11 @@ const Card = ({ children }) => {
   );
 };
 
-const CardBody = ({ children }) => {
+const CardBody = ({ children }: { children: React.ReactNode }) => {
   return <Box flexGrow={1}>{children}</Box>;
 };
 
-const CardFooter = ({ children }) => {
+const CardFooter = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Divider />
