@@ -2,8 +2,9 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import { useUserData } from "lib/hooks";
 import { UserContext } from "lib/context";
+import React from "react";
 
-const AppProvider = ({ children }) => {
+export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const userData = useUserData();
 
   return (

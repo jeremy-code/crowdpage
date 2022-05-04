@@ -1,8 +1,8 @@
 import { Center, Img, Text, Heading } from "@chakra-ui/react";
 
-import Link from "components/Link";
+import { Link } from "components/Misc";
 
-const UserProlife = ({ user }) => {
+const UserProfile = ({ user }) => {
   return (
     <Center flexDir="column">
       <Img src={user.photoURL} alt={user.username} borderRadius="full" />
@@ -16,4 +16,4 @@ const UserProlife = ({ user }) => {
   );
 };
 
-export default UserProlife;
+export default UserProfile;

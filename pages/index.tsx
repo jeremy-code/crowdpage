@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button, useToast, Text } from "@chakra-ui/react";
 
 import { firestore, fromMillis, postToJSON } from "lib/firebase";
-import PostFeed from "components/PostFeed";
+import { PostFeed } from "components/Features";
 
 const LIMIT = 1;
 

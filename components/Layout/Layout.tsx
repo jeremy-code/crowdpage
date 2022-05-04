@@ -1,7 +1,6 @@
 import { Container } from "@chakra-ui/react";
 
-import Navbar from "components/Navbar";
-import Footer from "components/Footer";
+import { Navbar, Footer } from "components/Layout";
 
 const Layout = ({ children }) => {
   return (

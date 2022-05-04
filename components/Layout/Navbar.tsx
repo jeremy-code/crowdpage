@@ -11,7 +11,7 @@ import {
 import { AiOutlineShareAlt } from "react-icons/ai";
 
 import { UserContext } from "lib/context";
-import Link from "components/Link";
+import { Link } from "components/Misc";
 
 const Navbar = () => {
   const { user, username } = useContext(UserContext);

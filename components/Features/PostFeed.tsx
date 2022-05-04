@@ -1,8 +1,6 @@
 import { Text, Flex } from "@chakra-ui/react";
 
-import Card from "components/Card";
-import Link from "components/Link";
-import Loader from "components/Loader";
+import { Card, Link, Loader } from "components/Misc";
 
 const PostItem = ({ post, admin = false }) => {
   const wordCount = post?.content?.trim().split(/\+/g).length;
