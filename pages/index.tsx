@@ -3,12 +3,12 @@ import Head from "next/head";
 import Image from "next/image";
 import { Button, useToast, Text } from "@chakra-ui/react";
 
-import { firestore, fromMillis, postToJSON } from "../lib/firebase";
-import PostFeed from "../components/PostFeed";
+import { firestore, fromMillis, postToJSON } from "lib/firebase";
+import PostFeed from "components/PostFeed";
 
 const LIMIT = 1;
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const postsQuery = firestore
     .collectionGroup("posts")
     .where("published", "==", true)

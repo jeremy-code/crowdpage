@@ -10,8 +10,8 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineShareAlt } from "react-icons/ai";
 
-import { UserContext } from "../lib/context";
-import Link from "./Link";
+import { UserContext } from "lib/context";
+import Link from "components/Link";
 
 const Navbar = () => {
   const { user, username } = useContext(UserContext);

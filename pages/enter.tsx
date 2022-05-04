@@ -9,8 +9,8 @@ import {
 import { FcGoogle } from "react-icons/fc";
 import debounce from "lodash.debounce";
 
-import { auth, firestore, googleAuthProvider } from "../lib/firebase";
-import { UserContext } from "../lib/context";
+import { auth, firestore, googleAuthProvider } from "lib/firebase";
+import { UserContext } from "lib/context";
 
 const SignInButton = () => {
   const signInWithGoogle = async () => {

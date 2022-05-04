@@ -1,6 +1,6 @@
 import { Center, Img, Text, Heading } from "@chakra-ui/react";
 
-import Link from "./Link";
+import Link from "components/Link";
 
 const UserProlife = ({ user }) => {
   return (

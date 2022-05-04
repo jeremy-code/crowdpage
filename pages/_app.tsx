@@ -1,9 +1,8 @@
 import { AppProps } from "next/app";
 
-import "../styles/globals.css";
-
-import AppProvider from "../providers/AppProvider";
-import Layout from "../components/Layout";
+import "styles/globals.css";
+import AppProvider from "lib/AppProvider";
+import Layout from "components/Layout";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

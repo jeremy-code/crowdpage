@@ -1,8 +1,8 @@
 import { Flex } from "@chakra-ui/react";
 
-import UserProlife from "../../components/UserProlife";
-import PostFeed from "../../components/PostFeed";
-import { getUserWithUsername, postToJSON } from "../../lib/firebase";
+import UserProlife from "components/UserProlife";
+import PostFeed from "components/PostFeed";
+import { getUserWithUsername, postToJSON } from "lib/firebase";
 getUserWithUsername;
 
 export async function getServerSideProps({ query }) {
