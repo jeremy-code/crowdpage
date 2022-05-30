@@ -1,8 +1,9 @@
 import { useDocumentData } from "react-firebase-hooks/firestore";
 import { Text } from "@chakra-ui/react";
 
-import { PostContent } from "../../components/Features";
-import { firestore, getUserWithUsername, postToJSON } from "../../lib/firebase";
+import { PostContent } from "components/Features";
+import { firestore, getUserWithUsername, postToJSON } from "lib/firebase";
+import { Metatags } from "components/Misc";
 
 export async function getStaticProps({ params }) {
   const { username, slug } = params;
@@ -44,6 +45,7 @@ const PostPage = (props) => {
 
   return (
     <>
+      <Metatags title={post.title} />
       <PostContent post={post} />
       <Text>{post.heartCount || 0} hearts</Text>
     </>

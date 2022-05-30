@@ -1,5 +1,12 @@
+import { Metatags } from "components/Misc";
+
 const AdminPostEdit = () => {
-  return <div>AdminPostEdit</div>;
+  return (
+    <>
+      <Metatags title="Admin Post Edit" />
+      <p>AdminPostEdit</p>
+    </>
+  );
 };
 
 export default AdminPostEdit;

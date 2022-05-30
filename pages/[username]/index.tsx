@@ -1,6 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 
 import { UserProfile, PostFeed } from "components/Features";
+import { Metatags } from "components/Misc";
 import { getUserWithUsername, postToJSON } from "lib/firebase";
 getUserWithUsername;
 
@@ -36,6 +37,7 @@ export async function getServerSideProps({ query }) {
 const UserProfilePage = ({ user, posts }) => {
   return (
     <Flex gap={8} flexDir="column">
+      <Metatags title={user.username} />
       <UserProfile user={user} />
       <PostFeed posts={posts} />
     </Flex>

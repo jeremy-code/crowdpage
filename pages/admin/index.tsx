@@ -1,5 +1,12 @@
+import { Metatags } from "components/Misc";
+
 const AdminPostsPage = () => {
-  return <div>AdminPostsPage</div>;
+  return (
+    <>
+      <Metatags title="Admin Posts" />
+      <p>AdminPostsPage</p>
+    </>
+  );
 };
 
 export default AdminPostsPage;

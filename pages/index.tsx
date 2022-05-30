@@ -5,6 +5,7 @@ import { Button, useToast, Text } from "@chakra-ui/react";
 
 import { firestore, fromMillis, postToJSON } from "lib/firebase";
 import { PostFeed } from "components/Features";
+import { Metatags } from "components/Misc";
 
 const LIMIT = 1;
 
@@ -62,6 +63,7 @@ const Home = (props) => {
 
   return (
     <>
+      <Metatags title="Home" />
       <PostFeed posts={posts} />
       {!postsEnd && (
         <Button

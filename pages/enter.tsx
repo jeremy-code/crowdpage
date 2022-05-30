@@ -11,6 +11,7 @@ import debounce from "lodash.debounce";
 
 import { auth, firestore, googleAuthProvider } from "lib/firebase";
 import { UserContext } from "lib/context";
+import { Metatags } from "components/Misc";
 
 const SignInButton = () => {
   const signInWithGoogle = async () => {
@@ -151,6 +152,7 @@ const EnterPage = () => {
 
   return (
     <>
+      <Metatags title="Enter" />
       {user ? (
         !username ? (
           <UsernameForm />
