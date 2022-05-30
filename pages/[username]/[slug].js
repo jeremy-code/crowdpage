@@ -8,12 +8,6 @@ export async function getStaticProps({ params }) {
   const { username, slug } = params;
   const userDoc = await getUserWithUsername(username);
 
-  if (!userDoc) {
-    return {
-      notFound: true,
-    };
-  }
-
   let post;
   let path;
   if (userDoc) {
