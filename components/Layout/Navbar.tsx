@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import NextLink from "next/link";
 import {
   Container,
   Button,
@@ -39,9 +40,9 @@ const Navbar = () => {
       {/* if user is signed in and has username */}
       {username && user && (
         <Flex as="nav" align="center" gap={[2, 8]}>
-          <Link href="/admin">
+          <NextLink href="/admin" passHref>
             <Button colorScheme="purple">Write Posts</Button>
-          </Link>
+          </NextLink>
           <Link href={`/${username}`}>
             <Avatar src={user.photoURL} size="sm" />
           </Link>
@@ -51,9 +52,9 @@ const Navbar = () => {
       {/* if user is not signed OR has no created username */}
       {!username && (
         <Flex as="nav" align="center" gap={[2, 8]}>
-          <Link href="/enter">
+          <NextLink href="/enter" passHref>
             <Button colorScheme="purple">Login</Button>
-          </Link>
+          </NextLink>
         </Flex>
       )}
     </Container>

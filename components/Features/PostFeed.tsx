@@ -3,7 +3,7 @@ import { Text, Flex } from "@chakra-ui/react";
 import { Card, Link, Loader } from "components/Misc";
 
 const PostItem = ({ post, admin = false }) => {
-  const wordCount = post?.content?.trim().split(/\+/g).length;
+  const wordCount = post?.content?.split(" ").length;
   const minutesToRead = (wordCount / 200).toFixed(0);
 
   return (

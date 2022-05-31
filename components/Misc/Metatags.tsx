@@ -1,12 +1,12 @@
 import Head from "next/head";
 
-type Props = {
+type MetatagProps = {
   title: string;
   description?: string;
   image?: string;
 };
 
-const Metatags = ({ title, description, image }: Props) => {
+const Metatags = ({ title, description, image }: MetatagProps) => {
   return (
     <Head>
       <title>{"crowdpage | " + title}</title>

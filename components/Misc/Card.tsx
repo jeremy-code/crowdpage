@@ -1,6 +1,10 @@
-import { Divider, Flex, Box } from "@chakra-ui/react";
+import { Divider, Flex, Box, BoxProps } from "@chakra-ui/react";
 
-const Card = ({ children }: { children: React.ReactNode }) => {
+type CardProps = {
+  children: React.ReactNode;
+} & BoxProps;
+
+const Card = ({ children, ...props }: CardProps) => {
   return (
     <Flex
       flexDir="column"
@@ -10,6 +14,7 @@ const Card = ({ children }: { children: React.ReactNode }) => {
       p={8}
       gap={4}
       w="full"
+      {...props}
     >
       {children}
     </Flex>
