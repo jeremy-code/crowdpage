@@ -7,7 +7,7 @@ import { firestore, fromMillis, postToJSON } from "lib/firebase";
 import { PostFeed } from "components/Features";
 import { Metatags } from "components/Misc";
 
-const LIMIT = 1;
+const LIMIT = 4;
 
 export async function getServerSideProps() {
   const postsQuery = firestore
